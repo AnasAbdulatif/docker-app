@@ -17,23 +17,24 @@ const networkName = 'tresmerge-docker-main_default';
 
 //conect to db
 
-// mongoose.connect('mongodb://root:example@mongo:27017')
-// .then(() => console.log('connected to MongoDB...'))
-// .catch((err)=> console.log('faild to connect to DB:' ,err));
+mongoose.connect('mongodb://root:example@mongo:27017')
+.then(() => console.log('connected to MongoDB...'))
+.catch((err)=> console.log('faild to connect to DB:' ,err));
 
-// //connect to redis
+//connect to redis
 
-// client.on('error', err => console.log('Redis Client Error', err));
-// client.on('connect', () => console.log('connected to Redis...'));
-// client.connect();
+client.on('error', err => console.log('Redis Client Error', err));
+client.on('connect', () => console.log('connected to Redis...'));
+client.connect();
 
-const posturi=`postgres://root:example@postgres:5432`
-postClient = new Client({
-    connectionString:posturi,
-})
-postClient.connect()
-.then(() => console.log('connected to postgres...'))
-.catch((err)=> console.log('faild to connect to postgres:' ,err));
+// const posturi=`postgres://root:example@postgres:5432`
+// postClient = new Client({
+//     connectionString:posturi,
+// })
+// postClient.connect()
+// .then(() => console.log('connected to postgres...'))
+// .catch((err)=> console.log('faild to connect to postgres:' ,err));
+
 //connect to redis
 
 client.on('error', err => console.log('Redis Client Error', err));
@@ -43,7 +44,7 @@ client.connect();
 
 app.get('/', (req, res) =>{
 client.set('products','products 1');
-res.send('<h1> Nginx APP is working</h1>');
+res.send('<h1> Nginx APP is working g</h1>');
 });
 
 app.get('/data', async(req, res) =>{
