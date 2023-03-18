@@ -3,6 +3,7 @@ services:
 
   node-app:
     container_name: appcon
+    image: anas99anas/node-app
     ports:
      - "4000:4000"
     env_file:
@@ -11,8 +12,6 @@ services:
      - redis
      
      
-
-
   mongo:
     image: mongo
     container_name: mongocon

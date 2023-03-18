@@ -43,8 +43,8 @@ client.connect();
 
 
 app.get('/', (req, res) =>{
-client.set('products','products 2');
-res.send('<h1> Nginx APP is working</h1>');
+client.set('products','test is working');
+res.send('<h1> Nginx APP is working on AWS</h1>');
 });
 
 app.get('/data', async(req, res) =>{
