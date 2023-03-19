@@ -24,7 +24,7 @@ mongoose.connect('mongodb://root:example@mongo:27017')
 //connect to redis
 
 client.on('error', err => console.log('Redis Client Error', err));
-client.on('connect', () => console.log('connected to Redis...'));
+client.on('connect', () => console.log('connected to Redissssss...'));
 client.connect();
 
 // const posturi=`postgres://root:example@postgres:5432`
@@ -35,16 +35,10 @@ client.connect();
 // .then(() => console.log('connected to postgres...'))
 // .catch((err)=> console.log('faild to connect to postgres:' ,err));
 
-//connect to redis
-
-client.on('error', err => console.log('Redis Client Error', err));
-client.on('connect', () => console.log('connected to Redis...'));
-client.connect();
-
 
 app.get('/', (req, res) =>{
-client.set('products','test is working');
-res.send('<h1> Nginx APP is working on AWS</h1>');
+client.set('products','test 2');
+res.send('<h1> Nginx APP is working on AWS using dockerhubbb a7a</h1>');
 });
 
 app.get('/data', async(req, res) =>{
